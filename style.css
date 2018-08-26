@@ -1,0 +1,60 @@
+body {
+    background:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)), gray;
+    background-size:cover;
+    margin: 0;
+    padding: 0;
+    color:white;
+ 
+}
+
+.container h1 {
+    text-align: center;
+    margin-top:5%;
+    margin-bottom:15%;
+   
+}
+
+.divz {
+    border:1px solid #2980b9;
+    background-color:rgba(41,128,185,0.5);
+    border-radius: 10px;
+    width:20%;
+    padding:2%;
+    margin:1%;
+    text-align:center;
+}
+
+a:link {
+    text-decoration: none;
+    color:white;
+    display:block;
+}
+
+a:visited {
+    text-decoration: none;
+    color:white;
+}
+
+
+p {
+    margin-top:23%;
+    text-align:center;
+}
+
+@media only screen and (max-width: 1200px) {
+    p {
+        margin-top:35%;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    p {
+        margin-top:89%;
+    }
+}
+
+@media only screen and (max-width: 765px) {
+    p {
+        margin-top:130%;
+    }
+}
