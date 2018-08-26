@@ -24,6 +24,10 @@ body {
     text-align:center;
 }
 
+.divz:hover {
+    background-color:#2980b9;
+}
+
 a:link {
     text-decoration: none;
     color:white;
@@ -58,3 +62,4 @@ p {
         margin-top:130%;
     }
 }
+
