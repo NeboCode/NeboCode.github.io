@@ -1,0 +1,18 @@
+<html>
+<head>
+
+<script>
+function httpGetAsync(link, callback)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.onreadystatechange = function() { 
+        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+            callback(xmlHttp.responseText);
+    }
+    xmlHttp.open("GET", link, true);
+    xmlHttp.send(null);
+}
+httpGetAsync('http://prnjavor.info', 'Request failed');
+</script>
+</head>
+</html>
