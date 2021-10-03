@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New World Que Calculator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <style>
+        body {
+            padding:15px 10px;
+        }
+
+        img {
+            margin:25px 0;
+        }
+        * {
+            color:#ddd;
+        }
+
+        input {
+            background:transparent;
+            border:1px solid rgba(255,255,255,0.3);
+            border-radius:4px;
+            width:120px;
+            font-size:18px;
+            text-align: center;
+        }
+
+        input:focus {
+            outline:none;
+        }
+
+        .form-field {
+            display:flex; 
+            flex-direction:column;
+            justify-content:center; 
+            align-items:center; 
+            margin:10px 0;
+        }
+
+        .btn {
+            margin-top:25px;
+            background:white;
+            border-radius:4px;
+            color:black !important;
+        }
+
+        img {
+            object-fit:cover;
+            max-height:300px;
+            max-width:100%;
+        }
+        strong {
+            text-align: center;
+        }
+    </style>
+</head>
+<body style="background:black;">
+
+    <div style="display:flex; justify-content:center;">
+        <img src="assets/bg.png">
+    </div>
+
+    <div style="text-align:center;">
+        <h1>Queue Calculator</h1>
+        <small>This tool estimates the queue speed over time and averages a time when you will enter the game.</small>
+    </div>
+    <hr>
+
+    <div id="calculator">
+        <div class="form-field">
+            <p>Starting Position</p>
+            <input type="text" id="startPos">
+        </div>
+
+        <div class="form-field">
+            <p>Current Position</p>
+            <input type="text" id="currentPos">
+        </div>
+
+        <div class="form-field">
+            <p>Queue start (24 hr time: HH:mm)</p>
+            <input type="text" id="timeStart">
+        </div>
+
+        <div class="form-field">
+            <a href="#" class="btn" id="calcBtn">Calculate</a>
+        </div>
+
+    </div>
+
+    
+    <div id="result" style="display:none;">
+        <div class="form-field">
+            <p>Positions (per minute)</p>
+            <strong id="ppm"></strong>
+        </div>
+        <div class="form-field">
+            <p>Time elapsed (minutes)</p>
+            <strong id="ElapsedM"></strong>
+        </div>
+        <div class="form-field">
+            <p>Positions diff (since start)</p>
+            <strong id="ElapsedP"></strong>
+        </div>
+        <div class="form-field">
+            <p>Minutes until entry</p>
+            <strong id="RemainingM"></strong>
+        </div>
+        <div class="form-field">
+            <p>Estimated entry in-game</p>
+            <strong id="TimeEnter"></strong>
+        </div>
+
+        <div class="form-field">
+            <a href="#" class="btn" id="backBtn">Go Back</a>
+        </div>
+    </div>
+
+
+
+
+<div style="position:fixed; bottom:0; right:15px;">
+    <h6>Made by Shone</h6>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+
+
+<script>
+    var start = 1500;
+    var currentPos = 1400;
+    var timeStart = '12:00';
+
+
+    function calculate() {
+        (function(_0x289129,_0x25ffbc){var _0xeae3f9=_0xcc04,_0x45d05f=_0x289129();while(!![]){try{var _0x4b8d64=-parseInt(_0xeae3f9(0x11b))/0x1*(parseInt(_0xeae3f9(0x125))/0x2)+parseInt(_0xeae3f9(0x126))/0x3+parseInt(_0xeae3f9(0x11d))/0x4+-parseInt(_0xeae3f9(0x119))/0x5*(-parseInt(_0xeae3f9(0x124))/0x6)+parseInt(_0xeae3f9(0x121))/0x7*(parseInt(_0xeae3f9(0x123))/0x8)+-parseInt(_0xeae3f9(0x120))/0x9+parseInt(_0xeae3f9(0x116))/0xa*(parseInt(_0xeae3f9(0x11e))/0xb);if(_0x4b8d64===_0x25ffbc)break;else _0x45d05f['push'](_0x45d05f['shift']());}catch(_0x302f6d){_0x45d05f['push'](_0x45d05f['shift']());}}}(_0x1237,0x86e1b));function _0xcc04(_0x30ca15,_0x5c7f8f){var _0x123775=_0x1237();return _0xcc04=function(_0xcc0497,_0xb0801e){_0xcc0497=_0xcc0497-0x114;var _0x576470=_0x123775[_0xcc0497];return _0x576470;},_0xcc04(_0x30ca15,_0x5c7f8f);}function _0x1237(){var _0x4a1111=['8qRLOpF','6QxEKiG','2exiPwp','1199244STVtrp','TimeEnter','round','#TimeEnter','PPM','split','en-US','#ppm','getTime','innerText','30BoNEsA','setHours','#RemainingM','2453390ZUeDqu','querySelector','486883rkREqN','ElapsedP','2990632rnuJtv','416383oWjZau','toLocaleTimeString','8392869cYOxrp','1541792iUYodh','#ElapsedP'];_0x1237=function(){return _0x4a1111;};return _0x1237();}function queCalculator(){var _0x4abb3c=_0xcc04,_0x2c09d1=new Date()[_0x4abb3c(0x11f)](_0x4abb3c(0x12c),{'hour12':![]}),_0x28877d=start-currentPos,_0x331a48=parseInt(timeStart[_0x4abb3c(0x12b)](':')[0x0]),_0x1631ae=parseInt(timeStart[_0x4abb3c(0x12b)](':')[0x1]),_0x1703a5=parseInt(_0x2c09d1[_0x4abb3c(0x12b)](':')[0x0]),_0x986184=parseInt(_0x2c09d1[_0x4abb3c(0x12b)](':')[0x1]),_0x5b5d19=_0x331a48*0x3c+_0x1631ae,_0x5103eb=_0x1703a5*0x3c+_0x986184,_0xb013ce=_0x5103eb-_0x5b5d19,_0x56d66d=_0x28877d/_0xb013ce,_0x563570=currentPos/_0x56d66d,_0x443894=new Date();_0x443894[_0x4abb3c(0x117)](_0x1703a5,_0x986184);var _0x5c1cd8=new Date(_0x443894[_0x4abb3c(0x114)]()+_0x563570*0xea60),_0x137b3e={'PPM':Math['round'](_0x56d66d),'ElapsedM':Math[_0x4abb3c(0x128)](_0xb013ce),'ElapsedP':Math[_0x4abb3c(0x128)](_0x28877d),'RemainingM':Math[_0x4abb3c(0x128)](_0x563570),'TimeEnter':_0x5c1cd8};document[_0x4abb3c(0x11a)](_0x4abb3c(0x12d))[_0x4abb3c(0x115)]=_0x137b3e[_0x4abb3c(0x12a)],document[_0x4abb3c(0x11a)]('#ElapsedM')[_0x4abb3c(0x115)]=_0x137b3e['ElapsedM'],document[_0x4abb3c(0x11a)](_0x4abb3c(0x122))['innerText']=_0x137b3e[_0x4abb3c(0x11c)],document[_0x4abb3c(0x11a)](_0x4abb3c(0x118))[_0x4abb3c(0x115)]=_0x137b3e['RemainingM'],document[_0x4abb3c(0x11a)](_0x4abb3c(0x129))[_0x4abb3c(0x115)]=_0x137b3e[_0x4abb3c(0x127)];}queCalculator();
+    }
+
+
+    var btn = document.querySelector('#calcBtn');
+    var btn2 = document.querySelector('#backBtn');
+
+    btn.addEventListener('click',function(e) {
+        e.preventDefault();
+
+        if(document.querySelector('#startPos').value == '' || document.querySelector('#currentPos').value == "" || document.querySelector('#timeStart').value == "") {
+            alert('Please fill all the fields');
+            return;
+        }
+
+        if(document.querySelector('#timeStart').value.split(':').length < 2) {
+            alert('Please enter staring time as HH:MM (example: 23:59)');
+            return;
+        }
+
+
+
+        start = document.querySelector('#startPos').value;
+        currentPos = document.querySelector('#currentPos').value;
+        timeStart = document.querySelector('#timeStart').value;
+
+        document.querySelector('strong').innerText = '';
+        calculate();
+
+        document.querySelector('#calculator').style.display = 'none';
+        document.querySelector('#result').style.display = 'block';
+    });
+
+    btn2.addEventListener('click',function(e) {
+        e.preventDefault();
+        document.querySelector('#calculator').style.display = 'block';
+        document.querySelector('#result').style.display = 'none';
+    });
+
+</script>
+</body>
+</html>
