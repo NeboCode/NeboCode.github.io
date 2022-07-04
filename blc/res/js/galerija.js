@@ -3,8 +3,10 @@ const overlay = document.querySelector('.gallery-overlay');
 const overlayImg = document.querySelector('.overlay-img');
 let overlayOpen = false;
 let currentPhoto = null;
+let currentPosition = null;
 
 const closeOverlay = () => {
+    window.scrollTo(0,currentPosition);
     overlay.style.display = 'none';
     overlayOpen = false;
     document.querySelector('body').style.overflow = 'initial';
@@ -12,6 +14,7 @@ const closeOverlay = () => {
 }
 
 const openOverlay = () => {
+    currentPosition = window.pageYOffset;
     window.scrollTo(0, 0);
     overlay.style.display = 'flex';
     document.querySelector('body').style.overflow = 'hidden';
