@@ -10,6 +10,8 @@ const closeOverlay = () => {
     overlay.style.display = 'none';
     overlayOpen = false;
     document.querySelector('.gallery-wrapper').style.overflow = 'initial';
+    document.querySelector('html').style.overflow = 'initial';
+    document.querySelector('body').style.overflow = 'initial';
     currentPhoto = null;
 }
 
@@ -18,6 +20,8 @@ const openOverlay = () => {
     window.scrollTo(0, 0);
     overlay.style.display = 'flex';
     document.querySelector('.gallery-wrapper').style.overflow = 'hidden';
+    document.querySelector('html').style.overflow = 'hidden';
+    document.querySelector('body').style.overflow = 'hidden';
     overlayOpen = true;
 }
 
