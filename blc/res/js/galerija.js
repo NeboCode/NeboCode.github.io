@@ -9,7 +9,7 @@ const closeOverlay = () => {
     window.scrollTo(0,currentPosition);
     overlay.style.display = 'none';
     overlayOpen = false;
-    document.querySelector('body').style.overflow = 'initial';
+    document.querySelector('.gallery-wrapper').style.overflow = 'initial';
     currentPhoto = null;
 }
 
@@ -17,7 +17,7 @@ const openOverlay = () => {
     currentPosition = window.pageYOffset;
     window.scrollTo(0, 0);
     overlay.style.display = 'flex';
-    document.querySelector('body').style.overflow = 'hidden';
+    document.querySelector('.gallery-wrapper').style.overflow = 'hidden';
     overlayOpen = true;
 }
 
