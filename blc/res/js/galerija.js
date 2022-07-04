@@ -12,6 +12,7 @@ const closeOverlay = () => {
 }
 
 const openOverlay = () => {
+    window.scrollTo(0, 0);
     overlay.style.display = 'flex';
     document.querySelector('body').style.overflow = 'hidden';
     overlayOpen = true;
