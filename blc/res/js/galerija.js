@@ -7,6 +7,7 @@ let currentPhoto = null;
 const closeOverlay = () => {
     overlay.style.display = 'none';
     overlayOpen = false;
+    document.querySelector('body').style.overflow = 'initial';
     currentPhoto = null;
 }
 
