@@ -139,7 +139,7 @@ img.profile_photo {
 .gallery-overlay {
     background:black;
     z-index:999;
-    position:absolute;
+    position:fixed;
     display: none;
     justify-content: center;
     align-items: center;
