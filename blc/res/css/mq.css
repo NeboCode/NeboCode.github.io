@@ -1,0 +1,21 @@
+/* Media queriji za responsiveness */
+
+@media(max-width:767px) {
+    .about-me-container {
+        flex-direction: column;
+    }
+    .about-me-container div {
+        width:100%;
+        text-align: center;
+    }
+    .gallery-container {
+        grid-template-columns: 1fr;
+    }
+    nav {
+        flex-direction: column;
+    }
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+    }
+}
